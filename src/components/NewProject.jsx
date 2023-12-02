@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Input from './Input.jsx';
 import Model from './Model.jsx';
-export default function NewProject({ onAddProject }) {
+export default function NewProject({ onAddProject, onCancel }) {
     const model = useRef();
     const entertitle = useRef();
     const enterdescription = useRef();
@@ -23,10 +23,10 @@ export default function NewProject({ onAddProject }) {
         });
     }
     return <>
-        <Model ref={model} buttonCaption='close'>
-            <h2>Inavild Input</h2>
-            <p>oops... looks like you forget to enter a value.</p>
-            <p>Please make sure you provide a vaild value for every input.</p>
+        <Model ref={model} buttonCaption='Okay' onCancel={onCancel}>
+            <h2 className='text-xl font-bold text-stone-500 my-4'>Inavild Input</h2>
+            <p className='text-stone-900 mb-4'>oops... looks like you forget to enter a value.</p>
+            <p className='text-stone-900 mb-4'>Please make sure you provide a vaild value for every input.</p>
         </Model>
         <div className="w-[35rem] m-16">
             <menu className="flex items-center justify-end gap-4 my-4">
