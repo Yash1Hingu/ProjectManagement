@@ -73,7 +73,7 @@ function App() {
     setProjectState(prevState => {
       return {
         ...prevState,
-        tasks: [...prevState.tasks, newTask]
+        tasks: [newTask,...prevState.tasks]
       }
     })
   }
@@ -102,7 +102,7 @@ function App() {
     content = <NoProjectSelected onClick={handleStartAddProject} />
   }
 
-  console.log(projectState);
+  // console.log(projectState);
   return (
     <main className="h-screen my-8 flex">
       <ProjectSidebar
